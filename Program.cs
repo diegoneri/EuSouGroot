@@ -1,14 +1,11 @@
 ﻿Console.Clear();
-Console.WriteLine("--- Groot Chatbot ---");
 string pergunta = "";
-while (true)
+bool respostaEhTchau = false;
+Console.WriteLine("--- Groot Chatbot ---");
+while (!respostaEhTchau)
 {
     Console.Write("Pergunta: ");
     pergunta = Console.ReadLine();
-    if (pergunta == "Tchau")
-    {
-        Console.WriteLine("                          Resposta: Eu sou Groot!");        
-        break;
-    }
-    Console.WriteLine("                          Resposta: Eu sou Groot.");
+    respostaEhTchau = pergunta == "Tchau";
+    Console.WriteLine($"                          Resposta: Eu sou Groot{(respostaEhTchau ? "!" : ".")}");
 }
